@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ASG1</title>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    #webgl {
+      border: 1px solid black;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 300px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body onload="main()">
+  <canvas id="webgl" width="400" height="400"></canvas>
+
+  <div class="controls">
+    <div class="buttons">
+      <button id="pointButton">Point</button>
+      <button id="triangleButton">Triangle</button>
+      <button id="circleButton">Circle</button>
+      <button id="clearButton">Clear Canvas</button>
+      <button id="drawPictureButton">Draw Picture</button>
+    </div>
+
+    <label for="redSlide">Red</label>
+    <input type="range" min="0" max="100" value="100" id="redSlide">
+
+    <label for="greenSlide">Green</label>
+    <input type="range" min="0" max="100" value="100" id="greenSlide">
+
+    <label for="blueSlide">Blue</label>
+    <input type="range" min="0" max="100" value="100" id="blueSlide">
+
+    <label for="alphaSlide">Alpha</label>
+    <input type="range" min="0" max="100" value="100" id="alphaSlide">
+
+    <label for="sizeSlide">Size</label>
+    <input type="range" min="5" max="40" value="10" id="sizeSlide">
+
+    <label for="segmentSlide">Segments: <span id="segmentValue">10</span></label>
+    <input type="range" min="3" max="40" value="10" id="segmentSlide">
+
+    <p id="awesomeNote">
+      Awesome feature: transparent painting with alpha control.
+    </p>
+
+    <h3>Reference Sketch</h3>
+  <img src="assets/sketch.png" alt="Reference sketch for triangle picture" width="300" style="border:2px solid red;">  </div>
+
+  <script src="lib/webgl-utils.js"></script>
+  <script src="lib/webgl-debug.js"></script>
+  <script src="lib/cuon-utils.js"></script>
+
+  <script src="src/Point.js"></script>
+  <script src="src/Triangle.js"></script>
+  <script src="src/Circle.js"></script>
+  <script src="src/ColoredPoints.js"></script>
+</body>
+</html>
