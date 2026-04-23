@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ASG2 Cow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .controls {
+      margin-top: 10px;
+      max-width: 520px;
+    }
+
+    .controls div {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: inline-block;
+      width: 120px;
+    }
+
+    button {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body onload="main()">
+  <h2>ASG2 - Cow</h2>
+
+  <canvas id="webgl" width="500" height="500"></canvas>
+
+  <div class="controls">
+    <div>
+      <label>Global Rotate Y:</label>
+      <input type="range" min="-180" max="180" value="0"
+        oninput="g_globalAngleY = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Global Rotate X:</label>
+      <input type="range" min="-90" max="90" value="0"
+        oninput="g_globalAngleX = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Front Thigh:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_frontThighAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Front Calf:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_frontCalfAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Front Foot:</label>
+      <input type="range" min="-30" max="30" value="0"
+        oninput="g_frontFootAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Back Thigh:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_backThighAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Back Calf:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_backCalfAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Back Foot:</label>
+      <input type="range" min="-30" max="30" value="0"
+        oninput="g_backFootAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Head:</label>
+      <input type="range" min="-20" max="20" value="0"
+        oninput="g_headAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Ears:</label>
+      <input type="range" min="-25" max="25" value="0"
+        oninput="g_earAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Tail:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_tailAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <label>Tail Tip:</label>
+      <input type="range" min="-45" max="45" value="0"
+        oninput="g_tailTipAngle = Number(this.value); renderScene();">
+    </div>
+
+    <div>
+      <button onclick="g_animation = true;">Animation ON</button>
+      <button onclick="g_animation = false;">Animation OFF</button>
+    </div>
+
+    <div id="fps">ms: 0.00</div>
+  </div>
+
+  <script src="./lib/cuon-utils.js"></script>
+  <script src="./lib/cuon-matrix-cse160.js"></script>
+  <script src="./src/asg2.js"></script>
+</body>
+</html>
