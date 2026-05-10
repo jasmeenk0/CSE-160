@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ASG3 Virtual World</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .controls {
+      max-width: 600px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body onload="main()">
+  <h2>ASG3 - Virtual World</h2>
+
+  <canvas id="webgl" width="500" height="500"></canvas>
+
+  <div class="controls">
+    <p><b>Controls:</b></p>
+    <p>W/S = forward/back, A/D = left/right, Q/E = turn left/right</p>
+    <p>Click = add block, Shift + Click = remove block</p>
+    <p id="fps">ms: 0.00</p>
+  </div>
+
+  <script src="./lib/cuon-utils.js"></script>
+  <script src="./lib/cuon-matrix-cse160.js"></script>
+  <script src="./src/Camera.js"></script>
+  <script src="./src/asg3.js"></script>
+</body>
+</html>
